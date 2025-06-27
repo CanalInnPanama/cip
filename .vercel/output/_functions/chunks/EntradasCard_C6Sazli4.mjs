@@ -1,0 +1,19 @@
+import { c as createComponent, b as createAstro, m as maybeRenderHead, d as addAttribute, u as unescapeHTML, a as renderTemplate } from './astro/server_BRWVHBW9.mjs';
+import 'kleur/colors';
+import 'clsx';
+
+const $$Astro = createAstro();
+const $$EntradasCard = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$EntradasCard;
+  const { title, excerpt, featuredImage, slug, date } = Astro2.props;
+  const postDate = new Date(date);
+  const day = postDate.getDate();
+  const months = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
+  const monthAbbreviation = months[postDate.getMonth()];
+  return renderTemplate`${maybeRenderHead()}<section class="flex flex-col sm:justify-start justify-center items-center w-full h-auto"> <article class="flex sm:flex-row flex-col items-center sm:justify-start justify-center gap-4 sm:w-4/5 w-full h-auto text-secondary m-auto"> <div class="group flex h-auto sm:w-1/3 w-full overflow-hidden transition-all duration-500 relative cursor-pointer"> <a${addAttribute(`/post/${slug}`, "href")}> <img class="sm:w-full h-full cover hover:scale-125 transition-all duration-500"${addAttribute(featuredImage, "src")} alt="featuredImage"> <div class="absolute top-0 left-0 w-full h-full bg-primary opacity-0 group-hover:opacity-50 transition-all duration-500"></div> <div class="absolute bottom-0 left-0 bg-primary text-white p-2 text-center"> <div id="dia" class="text-3xl font-bold px-3">${day}</div> <div id="mes" class="text-2xs">${monthAbbreviation}</div> </div> </a> </div> <div class="flex flex-col gap-7 sm:w-2/3"> <div class="font-bold sm:text-title text-mtitle text-secondary hover:text-primary transition-all duration-500 cursor-pointer"> <a${addAttribute(`/post/${slug}`, "href")}> <h1 class="sm:text-left text-center">${title}</h1> </a> </div> <div class="sm:text-parrafo text-mparrafo text-justify">${unescapeHTML(excerpt)}</div> <div class="flex justify-between w-full"> <a${addAttribute(`/post/${slug}`, "href")} class="font-bold text-secondary sm:text-mparrafo text-xl uppercase hover:text-primary hover:ml-1 transition-all duration-500">
+Leer más...
+</a> <a${addAttribute(`/post/${slug}`, "href")}> <i class="hover:text-primary hover:mr-1 transition-all duration-500 text-parrafo font-bold fa-solid fa-plus"></i> </a> </div> </div> </article> </section>`;
+}, "C:/Users/camil/Documents/WEB-DE-CLIENTES/CANAL-INN/DEPLOY/canalinnpruebas-main - en limpio/src/components/EntradasCard.astro", void 0);
+
+export { $$EntradasCard as $ };
